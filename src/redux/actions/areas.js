@@ -29,3 +29,55 @@ export const fetchAreas = () => {
       });
   };
 };
+
+export const getAreaData = (data) => {
+  return {
+    type: actionTypes.GET_AREA,
+    area: data,
+  };
+};
+
+export const getAreaDetails = (area, users) => {
+  var newArray = users.filter(function (el) {
+    return el.area_id === area.area_id;
+  });
+  var newArrayM = newArray.filter((el) => {
+    return el.gender === "M";
+  });
+  var newArrayPro = newArray.filter((el) => {
+    return el.is_pro_user;
+  });
+  var newArrayProM = newArrayPro.filter((el) => {
+    return el.gender === "M";
+  });
+  var newArrayUnPro = newArray.filter((el) => {
+    return !el.is_pro_user;
+  });
+  var newArrayUnProM = newArrayUnPro.filter((el) => {
+    return el.gender === "M";
+  });
+
+  let areaDetails_users = {
+    perAreaUsers: newArray.length,
+    maleUsers: newArrayM.length,
+    femaleUsers: newArray.length - newArrayM.length,
+    totalProUsers: newArrayPro.length,
+    proMaleUsers: newArrayProM.length,
+    proFemaleUsers: newArrayPro.length - newArrayProM.length,
+    totalUnProUsers: newArrayUnPro.length,
+    unProMaleUsers: newArrayUnProM.length,
+    unProFemaleUsers: newArrayUnPro.length - newArrayUnProM.length,
+  };
+
+  return {
+    type: actionTypes.GET_AREA_DETAILS,
+    areaUsersDetails: areaDetails_users,
+  };
+};
+
+export const getClearAreaDetails = (data) => {
+  return {
+    type: actionTypes.GET_CLEAR_AREA_DETAILS,
+    clearDetails: data,
+  };
+};

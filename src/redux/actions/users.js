@@ -8,6 +8,13 @@ export const getUesrsData = (data) => {
   };
 };
 
+export const getUesrsAreasData = (data) => {
+  return {
+    type: actionTypes.AREAS_USERS,
+    areasUsers: data,
+  };
+};
+
 export const fetchUsers = () => {
   return (dispatch) => {
     axios
@@ -22,5 +29,21 @@ export const fetchUsers = () => {
       .catch((error) => {
         console.log(error);
       });
+  };
+};
+
+export const mergeBothDatas = (areas, users) => {
+  let newArray = [];
+  for (let i = 0; i < areas.features.length; i++) {
+    newArray = users.filter((user) => {
+      if (user.area_id === areas.features[i].properties.area_id) {
+        user["area_name"] = areas.features[i].properties.name;
+        user["pin_code"] = areas.features[i].properties.pin_code;
+      }
+      return user;
+    });
+  }
+  return (dispatch) => {
+    dispatch(getUesrsAreasData(newArray));
   };
 };

@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 
 import userReducer from "./reducers/users";
 import areaReducer from "./reducers/areas";
+import commonReducer from "./reducers/common";
 
 const composeEnhancers =
   process.env.NODE_ENV === "development"
@@ -12,6 +13,7 @@ const composeEnhancers =
 const rootReducer = combineReducers({
   users: userReducer,
   areas: areaReducer,
+  common: commonReducer,
 });
 
 const store = createStore(

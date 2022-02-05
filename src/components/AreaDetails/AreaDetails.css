@@ -1,0 +1,20 @@
+.areaDetailContent > div {
+    padding: 1px 2px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.areaDetailChip {
+    background: lightgrey;
+    padding: 2px 10px;
+    border-radius: 2px;
+    margin-left: 3px;
+
+}
+
+.areaDetailBox {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}

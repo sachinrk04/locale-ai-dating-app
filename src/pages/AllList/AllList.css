@@ -1,0 +1,35 @@
+.cell-chip-male {
+    background: skyblue;
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+.cell-chip-female {
+    background: pink;
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+.cell-chip-yes {
+    background: green;
+    padding: 3px 10px;
+    border-radius: 2px;
+    color: aliceblue;
+}
+.cell-chip-no {
+    background: orange;
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+
+.cell-chip-match {
+    background: green;
+    padding: 3px 10px;
+    border-radius: 2px;
+    color: aliceblue;
+}
+
+.cell-chip-match-no {
+    background: red;
+    padding: 3px 10px;
+    border-radius: 2px;
+    color: aliceblue;
+}

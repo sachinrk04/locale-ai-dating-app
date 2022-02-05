@@ -1,21 +1,15 @@
 import * as actionTypes from "../actionTypes";
 
 const initialState = {
-  users: [],
-  areasUsers: [],
+  isOpen: false,
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.GET_USERS:
+    case actionTypes.POPUP_OPEN_CLOSE:
       return {
         ...state,
-        users: action.users,
-      };
-    case actionTypes.AREAS_USERS:
-      return {
-        ...state,
-        areasUsers: action.areasUsers,
+        isOpen: action.openClose,
       };
     default:
       return state;

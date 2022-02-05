@@ -1,8 +1,24 @@
-.user {
-    margin-top: 64px;
-    /* height: 25vh;
-    background: firebrick; */
-}
 .map {
-    height: 80vh;
+    height: 100vh;
+}
+
+.popupBox {
+    min-height: 50px;
+    margin-top: 10px;
+}
+
+.popupHeader {
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+.popupHeader > h2 {
+    margin: 0;
+}
+
+.popupButton {
+    padding: 3px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
 }
